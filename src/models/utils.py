@@ -33,3 +33,24 @@ def freeze_parameters(model, threshold=1e-6):
             param.requires_grad = False
         else:
             param.requires_grad = True
+def get_edges(points, cutoff):
+    """
+    Creates edge index and edge distances for a point cloud within a cutoff radius.
+
+    Args:
+        points: A PyTorch tensor of shape [num_points, 3] representing the point cloud.
+        cutoff: The cutoff radius.
+
+    Returns:
+        edge_index: A PyTorch tensor of shape [2, num_edges] representing the edge index.
+        edge_attr: A PyTorch tensor of shape [num_edges, 1] representing the edge distances.
+    """
+
+    dist_mat = torch.cdist(points, points)
+    mask = dist_mat > cutoff
+    dist_mat[mask] = 0
+
+    edge_index = torch.nonzero(dist_mat, as_tuple=True)
+    edge_attr = dist_mat[edge_index[0], edge_index[1]].unsqueeze(1)
+
+    return edge_index, edge_attr    
