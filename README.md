@@ -1,6 +1,6 @@
 # Pruned and Freezing Weights Model Training
 
-This repository contains a project that implements a robust machine learning model by leveraging **pruning** and **weight freezing** techniques during training. The approach focuses on addressing elements of the training set with high uncertainty while ensuring efficient model performance and comparison against a baseline model.
+This repository contains a project that implements a robust Equivariant Graph Neural Network model by leveraging **pruning** and **weight freezing** techniques during training. The approach focuses on addressing elements of the training set with high uncertainty while ensuring efficient model performance and comparison against a baseline model.
 
 ## Overview
 
