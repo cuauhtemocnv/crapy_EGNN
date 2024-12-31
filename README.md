@@ -28,7 +28,7 @@ Modern machine learning models often overfit to noise or struggle with data poin
 
 ## Usage
 
-1. Open the `prunedmodel.ipynb` notebook in your preferred Jupyter environment.
+1. Open the `Example_crapyEGNN.ipynb` notebook in your preferred Jupyter environment.
 2. Follow the step-by-step instructions to load the dataset, preprocess the data, and train the model.
 3. Evaluate the model performance and compare it with the baseline.
 
